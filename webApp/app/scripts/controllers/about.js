@@ -8,10 +8,6 @@
  * Controller of the webAppApp
  */
 angular.module('webAppApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AboutCtrl', function ($scope, $state) {
+    $scope.$state = $state;
   });

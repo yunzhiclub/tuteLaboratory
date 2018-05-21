@@ -1,5 +1,5 @@
 // Generated on 2017-11-17 using generator-angular 0.16.0
-'use strict';
+'use strict'
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -7,23 +7,23 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
+  require('time-grunt')(grunt)
 
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn'
-  });
+  })
 
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
-  };
+  }
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 9002,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
       livereload: {
         options: {
           open: true,
-          middleware: function(connect) {
+          middleware: function (connect) {
             return [
               connect.static('.tmp'),
               connect().use(
@@ -90,14 +90,14 @@ module.exports = function(grunt) {
                 connect.static('./app/styles')
               ),
               connect.static(appConfig.app)
-            ];
+            ]
           }
         }
       },
       test: {
         options: {
           port: 9001,
-          middleware: function(connect) {
+          middleware: function (connect) {
             return [
               connect.static('.tmp'),
               connect.static('test'),
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
                 connect.static('./bower_components')
               ),
               connect.static(appConfig.app)
-            ];
+            ]
           }
         }
       },
@@ -174,7 +174,7 @@ module.exports = function(grunt) {
     postcss: {
       options: {
         processors: [
-          require('autoprefixer-core')({ browsers: ['last 1 version'] })
+          require('autoprefixer-core')({browsers: ['last 1 version']})
         ]
       },
       server: {
@@ -427,12 +427,11 @@ module.exports = function(grunt) {
         singleRun: true
       }
     }
-  });
+  })
 
-
-  grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
+  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['build', 'connect:dist:keepalive'])
     }
 
     grunt.task.run([
@@ -442,13 +441,13 @@ module.exports = function(grunt) {
       'postcss:server',
       'connect:livereload',
       'watch'
-    ]);
-  });
+    ])
+  })
 
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function(target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
-  });
+  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.')
+    grunt.task.run(['serve:' + target])
+  })
 
   grunt.registerTask('test', [
     'clean:server',
@@ -457,7 +456,7 @@ module.exports = function(grunt) {
     'postcss',
     'connect:test',
     'karma'
-  ]);
+  ])
 
   grunt.registerTask('build', [
     'clean:dist',
@@ -475,12 +474,12 @@ module.exports = function(grunt) {
     'filerev',
     'usemin',
     'htmlmin'
-  ]);
+  ])
 
   grunt.registerTask('default', [
     'newer:jshint',
     'newer:jscs',
     'test',
     'build'
-  ]);
-};
+  ])
+}

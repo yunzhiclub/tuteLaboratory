@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /**
  * @ngdoc overview
@@ -18,20 +18,40 @@ angular
     'ngTouch',
     'ui.router'
   ])
-  .config(function ($routeProvider) {
-
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider.state({
+      name: 'main',
+      url: '/',
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      data: {
+        title: '首页'
+      }
+    })
+    .state({
+      name: 'about',
+      url: '/about',
+      templateUrl: 'views/about.html',
+      controller: 'AboutCtrl',
+      data: {
+        title: '关于我们'
+      }
+    })
+      .state({
+        name: 'nav',
+        url: '/nav',
+        templateUrl: 'views/nav.html',
+        data: {
+          title: '站内导航'
+        }
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+    .state({
+      name: 'check',
+      url: '/check',
+      templateUrl: 'views/check.html',
+      data: {
+        title: '验收'
+      }
+    });
+    $urlRouterProvider.otherwise('/');
   });

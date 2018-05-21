@@ -8,9 +8,10 @@
  * Controller of the webAppApp
  */
 angular.module('webAppApp')
-  .controller('MainCtrl', function($http, $scope) {
+  .controller('MainCtrl', function($http, $scope, $state) {
     var self = this;
     self.init = function() {
+      $state.$current.name = 'main';
       // 先获取本地数据，用于显示
       var url = '/data/main.json';
       $http.get(url)
@@ -34,8 +35,8 @@ angular.module('webAppApp')
 
     /**
      * 切换是否显示more
-     * @param  {[type]} object 
-     * @return {}        
+     * @param  {[type]} object
+     * @return {}
      */
     self.toggleShowMore = function(object) {
       object.showMore = !object.showMore;
