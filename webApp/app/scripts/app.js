@@ -41,6 +41,7 @@ angular
         name: 'nav',
         url: '/nav',
         templateUrl: 'views/nav.html',
+        controller: 'NavCtrl',
         data: {
           title: '站内导航'
         }
