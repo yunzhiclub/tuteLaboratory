@@ -8,7 +8,6 @@
  * Controller of the webAppApp
  */
 angular.module('webAppApp')
-  .controller('MainCtrl', function($http, $scope, $state) {
-
+  .controller('MainCtrl', function() {
 
   });

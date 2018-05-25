@@ -137,3 +137,28 @@ content ol li {
   color: #777;
   border-top: 1px solid #E37B40;
 }
+
+.leftMenu ul li{
+    list-style: none;
+    margin:0px 0px;
+}
+
+.leftMenu ul li a{
+    padding: 0px 0px 0px 10px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-right: 5px solid #46B29D;
+    border-left: 5px solid #46B29D;
+    border-bottom: 1px dotted #46B29D;
+    border-top: 1px dotted #46B29D;
+    margin:4px 0px;
+}
+
+.leftMenu ul li a.active, .leftMenu ul li a:hover{
+    color: white;
+    font-weight: bold;
+    background-color: #46B29D;
+    border-right: 6px solid #E37B40;
+    border-left: 6px solid #E37B40;
+}

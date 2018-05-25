@@ -7,12 +7,9 @@
  * # menu
  */
 angular.module('webAppApp')
-  .directive('menu', function ($state) {
+  .directive('menu', function () {
     return {
       templateUrl: 'views/directive/menu.html',
-      restrict: 'EA',
-      link: function postLink(scope, element, attrs) {
-        scope.$state = $state;
-      }
+      restrict: 'EA'
     };
   });

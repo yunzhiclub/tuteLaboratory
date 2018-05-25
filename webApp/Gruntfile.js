@@ -1,5 +1,5 @@
 // Generated on 2017-11-17 using generator-angular 0.16.0
-'use strict'
+'use strict';
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -10,7 +10,7 @@
 module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt)
+  require('time-grunt')(grunt);
 
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
@@ -126,7 +126,7 @@ module.exports = function (grunt) {
       },
       all: {
         src: [
-          'Gruntfile.js',
+          // 'Gruntfile.js',
           '<%= yeoman.app %>/scripts/{,*/}*.js'
         ]
       },
