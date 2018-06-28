@@ -29,6 +29,15 @@ angular
       }
     })
     .state({
+      name: 'hot',
+      url: '/hot',
+      templateUrl: 'views/hot.html',
+      controller: 'HotCtrl',
+      data: {
+        title: '热点问题'
+      }
+    })
+    .state({
       name: 'about',
       url: '/about',
       templateUrl: 'views/about.html',
