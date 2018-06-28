@@ -1,0 +1,15 @@
+<content>
+  <div class="alert-danger">
+    以下地址，仅限于实验室内部访问，外网尚无法访问。
+  </div>
+  <div class="row marketing">
+    <div ng-repeat="object in lists">
+      <h4>{{object.title}}</h4>
+      <p ng-hide="object.showMore" ng-bind-html="object.content | yunzhiMore"></p>
+      <p ng-show="object.showMore" ng-bind-html="object.content"></p>
+      <button type="button" class="btn-sm btn-info" ng-click="toggleShowMore(object)"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;more</button>
+      <hr>
+    </div>
+  </div>
+</content>
+
