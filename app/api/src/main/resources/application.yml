@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: ${active: test}
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: pro
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${host:localhost}:${port:3306}/${database:tutelib}?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: ${username:root}
+    password: ${password:}
